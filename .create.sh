@@ -14,11 +14,13 @@ function create() {
 
     # The standard git stuff
     cd $FILEPATH$1
+    echo 'notes/' >> .gitignore
+    echo '__pycache__/' >> .gitignore
+    touch README.md
     git init -b main
     git add .
     git commit -m "Project creation"
     git remote add origin https://github.com/$USERNAME/$1
-    touch README.md
     git push -u origin main
 }
 
